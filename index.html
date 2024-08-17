@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weather app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="enter city name" class="username" spellcheck="false" oninput="return showicon()">
+            <div class="img" >
+                <span><i class="fa-solid fa-xmark"></i></span>
+                
+
+            </div>
+            <button><img src="images/search.png"style="width: 14px;"></button>
+          
+        </div>
+
+
+
+        <div class="error">
+            <p>Invalid City Name</p>
+        </div>
+
+
+        <div class="weather">
+            <img src="images/rain.webp"class="weather-icon">
+            <h1 class="temp">22°c</h1>
+            <h2 class="city">New York</h2>
+            <div class="details">
+                <div class="col">
+                    <img src="images/humidty.png" alt="" style="height: 100px; ">
+                    <div>
+                        <b><p class="humidity">50%</p></b>
+                       <b><p>Humidity</p></b> 
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="images/wind2.jpg" alt="" style="height: 100px;">
+                    <div>
+                        <b><p class="wind">15Km</p></b>
+                       <b> <p>Wind Speed</p></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
