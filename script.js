@@ -5,6 +5,8 @@ const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const searchBox=document.querySelector(".search input");
 const searchBtn=document.querySelector(".search button");
 const weatherIcon=document.querySelector(".weather-icon")
+// const gird = document.querySelector('#gird'); // Change '#gird' to the actual selector for the 'gird' element
+// const search = document.querySelector('#searchInput'); // Change '#searchInput' to the actual selector for the input element
 
 
 
@@ -85,8 +87,62 @@ searchBtn.addEventListener("click",()=>{
     checkWeather(searchBox.value);
 })
 
+   //voice search
 
+   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
+   if (SpeechRecognition) {
+       const recog = new SpeechRecognition();
+       recog.lang = 'en-US';
+       
+       const startButton = document.getElementById('voice-search');
+       const searchBox = document.querySelector('.search input');
+   
+       if (startButton && searchBox) { // Ensure elements exist
+           startButton.addEventListener('click', () => {
+               recog.start();
+           });
+   
+           recog.onresult = (event) => {
+               searchBox.value = event.results[0][0].transcript;
+           };
+   
+           recog.onerror = (event) => {
+               console.error('Speech recognition error:', event.error);
+           };
+   
+           recog.onend = () => {
+               console.log('Speech recognition ended');
+           };
+       } else {
+           console.error('Start button or search input not found');
+       }
+   } else {
+       console.log('Speech recognition not supported');
+   }
+   
 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 
     
