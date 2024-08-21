@@ -116,23 +116,7 @@ body{
     font-size: 25px;
 }
 
-header form i record{
-    background: white;
-    animation: voice-recording 1s infinite;
-}
 
-@keyframes voice-recording{
-    0%{
-        box-shadow: 0 0 5px red;
-    }
-    50%{
-        box-shadow: 0 0 10px 10px red;
-    }
-
-    100%{
-        box-shadow: 0 0 5px red;
-    }
-}
 
 
 .microphone{

@@ -98,13 +98,16 @@ searchBtn.addEventListener("click",()=>{
        const startButton = document.getElementById('voice-search');
        const searchBox = document.querySelector('.search input');
    
-       if (startButton && searchBox) { // Ensure elements exist
+       if (startButton && searchBox) { 
            startButton.addEventListener('click', () => {
                recog.start();
            });
    
            recog.onresult = (event) => {
-               searchBox.value = event.results[0][0].transcript;
+            let str = event.results[0][0].transcript.slice(0,event.results[0][0].transcript.length-1);
+            searchBox.value=str
+          
+               
            };
    
            recog.onerror = (event) => {
